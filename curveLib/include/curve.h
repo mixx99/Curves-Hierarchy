@@ -4,12 +4,8 @@
 
 namespace CHR {
 struct Curve {
-  virtual Point getPoint() = 0;
-  virtual Point getDerivative() = 0;
-  virtual ~Curve() {
-#ifndef NDEBUG
-    std::cout << "~Curve" << std::endl;
-#endif
-  }
+  virtual Point getPoint(double t) const = 0;
+  virtual Point getDerivative(double t) const = 0;
+  virtual ~Curve() = default;
 };
 } // namespace CHR

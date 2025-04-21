@@ -7,8 +7,8 @@ class Ellipse : public Curve {
 
 public:
   Ellipse(double a_ = 1, double b_ = 1) noexcept;
-  Point getPoint(double t = 1) const noexcept;
-  Point getDerivative(double t = 1) const noexcept;
+  Point getPoint(double t = 1) const noexcept override;
+  Point getDerivative(double t = 1) const noexcept override;
 
   void setA(double a_) noexcept { a = a_;}
   void setB(double b_) noexcept { b = b_;}
