@@ -9,10 +9,10 @@ namespace CHR{
   public:
     Circle(double r_) noexcept;
   public:
-    Point getPoint(const double& t) const noexcept;
-    Point getDerivative(const double& t) const noexcept;
+    Point getPoint(double t) const noexcept;
+    Point getDerivative(double t) const noexcept;
     double getRadius() const noexcept;
-    void setRadius(const double& r_) noexcept;
+    void setRadius(double r_) noexcept;
     ~Circle();
   };
 }

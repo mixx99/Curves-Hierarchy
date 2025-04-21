@@ -18,22 +18,18 @@ namespace CHR{
     checkValidRadius();
   }
 
-  Point Circle::getPoint(const double& t) const{
+  Point Circle::getPoint(double t) const{
     return Point(r * cos(t), r * sin(t), 0);
   }
-  Point Circle::getDerivative(const double& t) const{
+  Point Circle::getDerivative(double t) const{
     return Point(r * -sin(t), r * cos(t), 0);
   }
   double Circle::getRadius() const{
     return r;
   }
-  void Circle::setRadius(const double& r_){
+  void Circle::setRadius(double r_){
     r = r_;
     checkValidRadius();
   }
-  Circle::~Circle(){
-    #ifndef NDEBUG
-    std::cout << "~Circle" << std::endl;
-    #endif
-  }
+  Circle::~Circle(){}
 } // namespace CHR
