@@ -3,7 +3,7 @@
 
 namespace CHR {
 class Ellipse : public Curve {
-  double a = 1, b = 1;
+  double a, b;
 
 public:
   Ellipse(double a_ = 1, double b_ = 1) noexcept;
