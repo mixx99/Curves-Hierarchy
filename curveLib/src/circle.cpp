@@ -16,20 +16,20 @@ namespace CHR{
     }
   }
 
-  Circle::Circle(double r_) : r(r_){
+  Circle::Circle(double r_) noexcept : r(r_){
     checkValidRadius();
   }
 
-  Point Circle::getPoint(double t) const{
+  Point Circle::getPoint(double t) const noexcept{
     return Point(r * cos(t), r * sin(t), 0);
   }
-  Point Circle::getDerivative(double t) const{
+  Point Circle::getDerivative(double t) const noexcept{
     return Point(r * -sin(t), r * cos(t), 0);
   }
-  double Circle::getRadius() const{
+  double Circle::getRadius() const noexcept{
     return r;
   }
-  void Circle::setRadius(double r_){
+  void Circle::setRadius(double r_) noexcept{
     r = r_;
     checkValidRadius();
   }
