@@ -33,5 +33,4 @@ namespace CHR{
     r = r_;
     checkValidRadius();
   }
-  Circle::~Circle(){}
 } // namespace CHR

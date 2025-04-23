@@ -1,4 +1,6 @@
 #include "../include/ellipse.h"
+
+// std
 #include <cmath>
 
 using std::cin;
@@ -15,5 +17,4 @@ Point Ellipse::getDerivative(double t) const noexcept {
   return Point(a * (-sin(t)), b * cos(t), 0);
 }
 
-Ellipse::~Ellipse(){}
 } // namespace CHR

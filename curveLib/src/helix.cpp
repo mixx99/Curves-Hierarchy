@@ -12,7 +12,6 @@ using std::cos;
 
 namespace CHR{
     Helix::Helix(double r_, double step_) noexcept : r(r_), step(step_) {}
-    Helix::~Helix(){}
     void Helix::checkValidRadius(){
       if(r < 0){
         r = -r;

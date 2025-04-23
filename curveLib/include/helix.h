@@ -7,7 +7,6 @@ namespace CHR{
     void checkValidRadius();
   public:
     Helix(double r_, double step_) noexcept;
-    ~Helix();
     Point getPoint(double t) const noexcept override;
     Point getDerivative(double t) const noexcept override;
     double getRadius() const noexcept { return r; }

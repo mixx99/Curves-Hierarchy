@@ -12,6 +12,5 @@ namespace CHR{
     Point getDerivative(double t) const noexcept override;
     double getRadius() const noexcept;
     void setRadius(double r_) noexcept;
-    ~Circle();
   };
 }
