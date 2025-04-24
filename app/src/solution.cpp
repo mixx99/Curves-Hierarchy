@@ -82,11 +82,11 @@ namespace SLV{
       auto obj_ellipse = std::dynamic_pointer_cast<CHR::Ellipse>(i);
       auto obj_helix = std::dynamic_pointer_cast<CHR::Helix>(i);
       if(obj_circle)
-        std::cout << "Circle:" << std::endl;
+        std::cout << "Circle: " << "Radius = " << obj_circle->getRadius() << std::endl;
       else if(obj_ellipse)
-        std::cout << "Ellipse:" << std::endl;
+        std::cout << "Ellipse: " << "a = " << obj_ellipse->getA() << " b = " << obj_ellipse->getB() << std::endl;
       else if(obj_helix)
-        std::cout << "Helix:" << std::endl;
+        std::cout << "Helix: " << "R = " << obj_helix->getRadius() << " Step = " << obj_helix->getStep() << std::endl;
       else
         std::cerr << "Something went wrong with print points!" << std::endl;
 
