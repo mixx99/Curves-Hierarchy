@@ -19,7 +19,6 @@ namespace SLV{
   double Solution::getRandDouble(int max_value, bool can_be_negative){
     double integer_part = rand() % max_value;
     double float_part;
-    int r;
     while(1){
       float_part = 1 / ((double)(rand() % 10)); // % 10 gives a digit [0..9] for fractional part
       if(!std::isinf(float_part)) // Dangerous, division by 0
@@ -74,6 +73,10 @@ namespace SLV{
   }
 
   void Solution::printPointsAndDerivativesFromFirstContainer(double t) const{
+    double epsilon = 0.00001;
+    if(t - M_PI/4 < epsilon)
+      std::cout << "t = PI/4" << std::endl;
+
     for(const auto &i : firstContainer){
       auto obj_circle = std::dynamic_pointer_cast<CHR::Circle>(i);
       auto obj_ellipse = std::dynamic_pointer_cast<CHR::Ellipse>(i);
