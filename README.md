@@ -13,7 +13,7 @@ second container shares (i.e. not clones) circles of the first one, e.g. via poi
 - [x] Sort the second container in the ascending order of circles’ radii. That is, the first element has the
 smallest radius, the last - the greatest.
 - [x] Compute the total sum of radii of all curves in the second container  
-#### Additional optional requirements:
+#### *Additional optional requirements:
 - [x] Split implementation into a library of curves (.dll or .so) and executable which uses API of this
 library.
 - [ ] Implement computation of the total sum of radii using parallel computations (e.g. OpenMP or Intel
@@ -70,4 +70,4 @@ t = PI/4
 Size of the second container: 2
 Sum of radii in the second container: 9.53333
 ```
-**Note:** Default container generation uses 10 random curves with max radius = 10 and max step = 10. You can pass custom parameters to fillFirstContainer().**
+**Note:** Default container generation uses 10 random curves with max radius = 10 and max step = 10. You can pass custom parameters to fillFirstContainer().
