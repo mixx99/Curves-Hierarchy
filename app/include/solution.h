@@ -23,7 +23,8 @@ struct Solution{
   void printPointsAndDerivativesFromFirstContainer(double t = M_PI / 4) const;
   void sortSecondContainer();
 
+  double getSumSecondContainerRadii() const;
 private:
-  double getRandDouble(int max_value, bool can_be_negative = false);
+  double getRandDouble(int max_value = 10, bool can_be_negative = false);
 };
 }
