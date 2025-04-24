@@ -76,11 +76,12 @@ namespace SLV{
     double epsilon = 0.00001;
     if(t - M_PI/4 < epsilon)
       std::cout << "t = PI/4" << std::endl;
-
+    int counter = 1;
     for(const auto &i : firstContainer){
       auto obj_circle = std::dynamic_pointer_cast<CHR::Circle>(i);
       auto obj_ellipse = std::dynamic_pointer_cast<CHR::Ellipse>(i);
       auto obj_helix = std::dynamic_pointer_cast<CHR::Helix>(i);
+      std::cout << "[" << counter << "]";
       if(obj_circle)
         std::cout << "Circle: " << "Radius = " << obj_circle->getRadius() << std::endl;
       else if(obj_ellipse)
@@ -92,6 +93,7 @@ namespace SLV{
 
       std::cout << "  Point:      " << i->getPoint(t) << std::endl;
       std::cout << "  Derivative: " << i->getDerivative(t) << std::endl;
+      counter++;
     }
   }
 }
