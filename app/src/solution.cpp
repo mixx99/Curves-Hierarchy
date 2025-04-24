@@ -5,6 +5,7 @@
 // std
 #include <cmath>
 #include <algorithm>
+#include <cassert>
 
 namespace{
   enum{
@@ -16,10 +17,11 @@ namespace{
 
 namespace SLV{
   double Solution::getRandDouble(int max_value, bool can_be_negative){
-    double integer_part = ((double)(rand() % max_value));
+    double integer_part = rand() % max_value;
     double float_part;
+    int r;
     while(1){
-      float_part = 1 / ((double)(rand() % 10)); // % 10 because we need first and the following digits after point
+      float_part = 1 / ((double)(rand() % 10)); // % 10 gives a digit [0..9] for fractional part
       if(!std::isinf(float_part)) // Dangerous, division by 0
         break;
     }
@@ -34,7 +36,7 @@ namespace SLV{
       double rand_radius = getRandDouble(max_radius);
       double second_rand_radius = getRandDouble(max_radius); // Second radius for ellipse
       double rand_step = getRandDouble(max_step);
-      int obj_number = rand() % 3; // % 3 because we have only 3 object: circle, ellipse, helix.
+      int obj_number = rand() % 3; // % 3 because we have only 3 objects: circle, ellipse, helix.
       if(obj_number == CIRCLE){
         firstContainer.push_back(std::make_shared<CHR::Circle>(CHR::Circle(rand_radius)));
       }
@@ -51,16 +53,24 @@ namespace SLV{
 
   void Solution::fillSecondContainer(){
     for(const auto &i : firstContainer){
-        auto curcle_obj = std::dynamic_pointer_cast<CHR::Circle>(i);
-        if(curcle_obj)
-          secondContainer.push_back(curcle_obj);
+        auto circle_obj = std::dynamic_pointer_cast<CHR::Circle>(i);
+        if(circle_obj)
+          secondContainer.push_back(circle_obj);
     }
   }
   void Solution::sortSecondContainer(){
     std::sort(secondContainer.begin(), secondContainer.end(), [](auto first, auto second)
     {
-      return first->getRadius() > second->getRadius();
+      return first->getRadius() < second->getRadius();
     });
+  }
+
+  double Solution::getSumSecondContainerRadii() const{
+    double result = 0;
+    for(const auto& i : secondContainer)
+      result += i->getRadius();
+    assert(result >= 0);
+    return result;
   }
 
   void Solution::printPointsAndDerivativesFromFirstContainer(double t) const{
