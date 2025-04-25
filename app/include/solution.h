@@ -2,14 +2,11 @@
 
 #include <curve.h>
 #include <circle.h>
+#include <constants.h>
 // std
-
 #include <vector>
 #include <memory>
 #include <ctime>
-#ifndef M_PI
-  #define M_PI 3.14159265358979323846
-#endif
 
 namespace SLV{
 struct Solution{

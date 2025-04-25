@@ -17,4 +17,12 @@ Point Ellipse::getDerivative(double t) const noexcept {
   return Point(a * (-sin(t)), b * cos(t), 0);
 }
 
+void Ellipse::checkValidRadii(){
+  if(a < 0 || b < 0){
+    a = std::abs(a);
+    b = std::abs(b);
+    std::cerr << "WARNING: Ellipse radius was negative. It changed to absolute value." << std::endl;
+  }
+}
+
 } // namespace CHR

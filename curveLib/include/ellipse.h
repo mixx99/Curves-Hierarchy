@@ -14,5 +14,7 @@ public:
   void setB(double b_) noexcept { b = b_;}
   double getA() const noexcept{ return a; }
   double getB() const noexcept {return b; }
+private:
+  void checkValidRadii();
 };
 } // namespace CHR
