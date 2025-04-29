@@ -51,7 +51,6 @@ You can run example with:
 We can run the program with special parameters in functions that filling containters and we will get something like this:
 ```Text
 Size of the first container: 5
-t = PI/4
 [1]Circle: Radius = 7.2
   Point:      x = 5.09117       y = 5.09117     z = 0
   Derivative: x = -5.09117      y = 5.09117     z = 0
